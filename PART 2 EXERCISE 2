@@ -1,0 +1,93 @@
+// FAZIRA MODI
+// BI19110234
+// LAB 5 SORTING 
+// PART 2 EXERCISE 2
+
+#include <iostream>
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// Utility function to print the contents of an array 
+void printArr(int arr[], int n) 
+{ 
+    for (int i = 0; i < n; i++) 
+        cout << arr[i] << " "; 
+} 
+  
+// Function to sort the array of 0s, 1s and 2s 
+void sortArr(int arr[], int n) 
+{ 
+    int i, no0 = 0, no1 = 0, no2 = 0, no3 = 0, no4 = 0; 
+  
+    // Count the number of 0s, 1s and 2s in the array 
+    for (i = 0; i < n; i++) { 
+        switch (arr[i]) { 
+        case 0: 
+            no0++; 
+            break; 
+        case 1: 
+            no1++; 
+            break; 
+        case 2: 
+            no2++; 
+            break; 
+        case 3:
+        	no3++;
+        	break;
+        case 4:
+        	no4++;
+        	break;
+        } 
+    } 
+  
+    // Update the array 
+    i = 0; 
+  
+    // Store all the 0s in the beginning 
+    while (no0 > 0) { 
+        arr[i++] = 0; 
+        no0--; 
+    } 
+  
+    // Then all the 1s 
+    while (no1 > 0) { 
+        arr[i++] = 1; 
+        no1--; 
+    } 
+  
+    // Then all the 2s 
+    while (no2 > 0) { 
+        arr[i++] = 2; 
+        no2--; 
+    } 
+    
+    // Then all the 3s
+    while (no3 > 0) {
+    	arr[i++] = 3;
+    	no3--;
+	}
+	
+	// Finally all the 4s
+	while (no4 > 0) {
+		arr[i++] = 4;
+		no4--;
+	}
+  
+    // Print the sorted array 
+    printArr(arr, n); 
+} 
+  
+// Driver code 
+int main() 
+{ 
+    int arr[] = { 4,2,0,3,4,0,4,1,2,1,3 }; 
+    int n = sizeof(arr) / sizeof(int); 
+  	
+  	cout<<"Input: \t";
+  	printArr(arr, n);
+	cout<<"\nOutput: ";
+    sortArr(arr, n); 
+  
+    return 0; 
+    
+}
